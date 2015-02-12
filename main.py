@@ -15,11 +15,27 @@
 # limitations under the License.
 #
 import webapp2
+import jinja2
+import os
+
+jinja_environment = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
-
+        template = jinja_environment.get_template('static/index.html')
+        self.response.out.write(template.render())
+class DownloadResume(webapp2.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = "application/txt"
+        self.response.headers['Content-Disposition'] = "attachment; filename=Shakir_Thowseen_01_2013.pdf"
+        os.path.dirname(__file__)
+        f = open(os.path.dirname(__file__) + '/static/shakir_thowseen_01_2014.pdf', 'r')
+        self.response.out.write(f.read())
+        
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/downloadResume',DownloadResume),
+
 ], debug=True)

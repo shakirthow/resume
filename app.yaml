@@ -9,9 +9,29 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+- url: /js
+  static_dir: static/js
+
+- url: /textData 
+  static_dir: static/textData
+  
+- url: /stylesheet
+  static_dir: static/stylesheet
+
+- url: /images
+  static_dir: static/images
+  
+- url: /fonts
+  static_dir: static/fonts
+  
+- url: /static/shakir_thowseen_01_2014.pdf
+  static_dir: static/shakir_thowseen_01_2014.pdf
+  
 - url: .*
   script: main.app
 
 libraries:
 - name: webapp2
   version: "2.5.2"
+- name: jinja2
+  version: latest

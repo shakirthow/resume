@@ -1,0 +1,51 @@
+/**{font-family: 'Roboto', sans-serif !important;}*/
+*{font-family: 'Open Sans', sans-serif !important;}
+
+
+#mainImage{
+	width: 100%;
+	z-index: -1;
+
+}
+
+#mainBackground{
+	background: url(../images/mainImage.jpg) no-repeat 50% 50% fixed;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	display: table;
+	overflow: hidden;
+	background-position: 70% 50%;
+
+	margin: 0px !important;
+}
+#welcomeRotate{
+	position: absolute;
+	z-index: 2;
+	top: 400px;
+	left: 50px;
+	font-size: 30px;
+}
+.txt-rotate
+{
+	color: #c0392b;
+}
+#learnButton{
+	border-color: #c0392b;
+	background-color: transparent;
+	color: #c0392b;
+}
+#downloadB{
+	border-color: #c0392b;
+	background-color: #c0392b;
+	color: #fff;
+}
+
+#intro{
+	padding: 40px;
+	text-align: center;
+}
+.scrollmagic-pin-spacer{
+	padding: 0px !important;
+}
