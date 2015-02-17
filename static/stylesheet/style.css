@@ -1,15 +1,15 @@
 /**{font-family: 'Roboto', sans-serif !important;}*/
 *{font-family: 'Open Sans', sans-serif !important;}
-
-
-#mainImage{
-	width: 100%;
-	z-index: -1;
-
+body, html {
+	height: 100%;
+}
+#testSpacer{
+	height: 1000px;
 }
 
+
 #mainBackground{
-	background: url(../images/mainImage.jpg) no-repeat 50% 50% fixed;
+	/*background: url(../images/mainImage.jpg) no-repeat 50% 50% fixed;*/
 	background-size: cover;
 	height: 100%;
 	width: 100%;
@@ -46,6 +46,50 @@
 	padding: 40px;
 	text-align: center;
 }
-.scrollmagic-pin-spacer{
-	padding: 0px !important;
+
+
+
+/********************************** PROJECTS **********************************/
+.wipe {
+	height: 100%;
+	width: 0% ;
+	top: 0;
+	overflow: hidden;
+
 }
+.defaultWork{
+	width: 100%
+}
+#beachIntro {
+	background-color: red;
+}
+#desertIntro {
+	background-color: yellow;
+} 
+#mountainIntro {
+	background-color: green;
+}
+#valleyIntro {
+	background-color: orange;
+}
+#redwoodIntro {
+	background-color: blue;
+}
+
+.wipe, .slide {
+	position: absolute;
+}
+
+#workExpMagicTrigger{
+/*	position: relative;
+	top: 50%;
+	transform: translateY(-50%);*/
+
+}
+
+
+
+
+
+
+
