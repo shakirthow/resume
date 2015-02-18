@@ -50,15 +50,15 @@ function workExp(){
     var controller = new ScrollMagic();
 	var sceneOptions = {duration: 200, offset: -100}
 	
-	var textAniW = new ScrollScene(sceneOptions)
-	.triggerHook("onCenter")
-	.triggerElement($('#work'))
-	.setTween(TweenMax.staggerTo($('#work').children("span"), 0.0001, {"font-weight":"700", color:'#2980b9', "font-size":70}, 0.2))
+	// var textAniW = new ScrollScene(sceneOptions)
+	// .triggerHook("onCenter")
+	// .triggerElement($('#work'))
+	// .setTween(TweenMax.staggerTo($('#work').children("span"), 0.0001, {"font-weight":"700", color:'#2980b9', "font-size":70}, 0.2))
 
-	var textAniE = new ScrollScene(sceneOptions)
-	.triggerHook("onCenter")
-	.triggerElement($('#work'))
-	.setTween(TweenMax.staggerTo($('#exp').children("span"), 0.0001, {"font-weight":"700", color:'#333', "font-size":40}, 0.2))
+	// var textAniE = new ScrollScene(sceneOptions)
+	// .triggerHook("onCenter")
+	// .triggerElement($('#work'))
+	// .setTween(TweenMax.staggerTo($('#exp').children("span"), 0.0001, {"font-weight":"700", color:'#333', "font-size":40}, 0.2))
 
 
 	var pinWorkEx = new ScrollScene({triggerElement: "#workExTrigger", duration: 3000, offset: 110})
@@ -66,7 +66,7 @@ function workExp(){
 								.addTo(controller);
 
 
-	controller.addScene([ textAniW, textAniE, pinWorkEx])
+	controller.addScene([pinWorkEx])
 	textAniW.addIndicators();
 	textAniE.addIndicators();
 	pinWorkEx.addIndicators();
