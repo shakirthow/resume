@@ -2,78 +2,80 @@ $( document ).ready(function() {
 	console.log( "ready!" );
 	rotateText()
 	// plane()
-
-	workExpMagic()
+	introAnimation()
+	workExp()
 
 });
 
 
-// set correct size for wipe child
-// var resizeWipeChild = function () {
-//     $("#pin .wipe h3").width($(window).width());
-// };
-// $(window).on("resize", resizeWipeChild);
-
-// 		var controller;
-// 	$(document).ready(function ($) {
-// 	    // init controller
-// 	    controller = new ScrollMagic();
-//         resizeWipeChild(); //trigger once
-// 	});
 
 
+function introAnimation(){
+	var controller = new ScrollMagic();
+	var sceneOptions = {duration: 300, offset: -100}
+	
+	var textAni = new ScrollScene(sceneOptions)
+	.triggerHook("onCenter")
+	.triggerElement($('#thankyou'))
+	.setTween(TweenMax.staggerTo($('#thankyou').children("span"), 0.0001, {"font-weight":"700", color:'#c0392b', "font-size":100}, 0.2))
+
+	var downloadAni = new ScrollScene(sceneOptions)
+	.triggerHook("onCenter",{pushFollowers: false})
+	.triggerElement($('#downloadB'))
+	.setTween(TweenMax.from($('#downloadB'), 1, {scale: 0, ease: Back.easeOut}));
 
 
-	// build tween
+	controller.addScene([ textAni, downloadAni])
+	// downloadAni.addIndicators();
+	// textAni.addIndicators();
+	
+}
 
 
+function workExp(){
+	var w = $('#work').text().split("");
+	$this = $('#work');
+    $('#work').empty();
+    $.each(w, function (i, el) {
+    $this.append("<span>" + el + "</span>");
+    });
+    var exp = $('#exp').text().split("");
+	$this = $('#exp');
+    $('#exp').empty();
+    $.each(exp, function (i, el) {
+    $this.append("<span>" + el + "</span>");
+    });
 
 
-// 	 $(document).ready(function ($) {
+    var controller = new ScrollMagic();
+	var sceneOptions = {duration: 200, offset: -100}
+	
+	var textAniW = new ScrollScene(sceneOptions)
+	.triggerHook("onCenter")
+	.triggerElement($('#work'))
+	.setTween(TweenMax.staggerTo($('#work').children("span"), 0.0001, {"font-weight":"700", color:'#2980b9', "font-size":70}, 0.2))
+
+	var textAniE = new ScrollScene(sceneOptions)
+	.triggerHook("onCenter")
+	.triggerElement($('#work'))
+	.setTween(TweenMax.staggerTo($('#exp').children("span"), 0.0001, {"font-weight":"700", color:'#333', "font-size":40}, 0.2))
 
 
+	var pinWorkEx = new ScrollScene({triggerElement: "#workExTrigger", duration: 3000, offset: 110})
+								.setPin("#workTitle",{pushFollowers: false})
+								.addTo(controller);
 
 
+	controller.addScene([ textAniW, textAniE, pinWorkEx])
+	textAniW.addIndicators();
+	textAniE.addIndicators();
+	pinWorkEx.addIndicators();
 
 
-function workExpMagic(){
-	controller = new ScrollMagic();
-	controller2 = new ScrollMagic();
-
-	var scenePin = new ScrollScene({triggerElement: "#workExpMagicTrigger", duration: 300, pushFollowers: false})
-	.setPin("#workExp")
-	.addTo(controller);
-
-
-	var preview = new TimelineMax()
-	preview.add([TweenMax.to("#beachIntro", 1, {
-		width: "100%"
-	})])
-	preview.add(TweenMax.to("#desertIntro", 1, {
-		width: "100%"
-	}))
-	preview.add([TweenMax.to("#mountainIntro", 1, {
-		width: "100%"
-	})])
-	preview.add(TweenMax.to("#valleyIntro", 1, {
-		width: "100%"
-	}))
-	preview.add([TweenMax.to("#redwoodIntro", 1, {
-		width: "100%"
-	})])
-
-
-	var sceneWipe = new ScrollScene({
-		triggerElement: "#workExpMagicTrigger",
-		duration: 300
-	}).setTween(preview).setPin("#pin").addTo(controller2);
-
-
-	// controller.addScene([ scenePin])
-	scenePin.addIndicators();
-	sceneWipe.addIndicators();
 
 }
+
+
 
 
 
@@ -130,8 +132,8 @@ function plane(){
 	.add(TweenMax.to($("#plane"), 1, {css:{bezier:flightpath.leave}, ease:Power1.easeInOut}));
 
 	// build scene
-	var scene = new ScrollScene({triggerElement: "#trigger", duration: 500, offset: 100})
-	.setPin("#target")
+	var scene = new ScrollScene({triggerElement: "#planeTrigger", duration: 5000, offset: 500})
+	.setPin("#target",{pushFollowers: false})
 	.setTween(tween)
 	.addTo(controller);
 

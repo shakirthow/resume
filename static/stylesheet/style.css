@@ -49,47 +49,35 @@ body, html {
 
 
 
-/********************************** PROJECTS **********************************/
-.wipe {
-	height: 100%;
-	width: 0% ;
-	top: 0;
-	overflow: hidden;
+/********************************** WORK EXPERIENCE **********************************/
 
+
+
+#exp, #work{
+	float: left;
+	margin: 10px 0 0 10px;
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 700;
 }
-.defaultWork{
-	width: 100%
+.workExpRow .productImg{
+	float: left;
 }
-#beachIntro {
-	background-color: red;
-}
-#desertIntro {
-	background-color: yellow;
-} 
-#mountainIntro {
-	background-color: green;
-}
-#valleyIntro {
-	background-color: orange;
-}
-#redwoodIntro {
-	background-color: blue;
+.workExpRow{
+	text-align: left;
+	border-bottom: 1px solid #e8e8e8;
 }
 
-.wipe, .slide {
-	position: absolute;
+.workExSub{
+	color: #2980b9;
+	font-weight: 500;
+	margin: 22px 0 5px 0;
+	font-size: 18px;
 }
-
-#workExpMagicTrigger{
-/*	position: relative;
-	top: 50%;
-	transform: translateY(-50%);*/
-
+.workExDate{
+	opacity: 0.5
 }
-
-
-
-
-
-
+.featured{
+	width: 150px;
+	margin-right: 10px;
+}
 
