@@ -33,18 +33,18 @@ function introAnimation(){
 
 
 function workExp(){
-	var w = $('#work').text().split("");
-	$this = $('#work');
-    $('#work').empty();
-    $.each(w, function (i, el) {
-    $this.append("<span>" + el + "</span>");
-    });
-    var exp = $('#exp').text().split("");
-	$this = $('#exp');
-    $('#exp').empty();
-    $.each(exp, function (i, el) {
-    $this.append("<span>" + el + "</span>");
-    });
+	// var w = $('#work').text().split("");
+	// $this = $('#work');
+ //    $('#work').empty();
+ //    $.each(w, function (i, el) {
+ //    $this.append("<span>" + el + "</span>");
+ //    });
+ //    var exp = $('#exp').text().split("");
+	// $this = $('#exp');
+ //    $('#exp').empty();
+ //    $.each(exp, function (i, el) {
+ //    $this.append("<span>" + el + "</span>");
+ //    });
 
 
     var controller = new ScrollMagic();
@@ -61,14 +61,14 @@ function workExp(){
 	// .setTween(TweenMax.staggerTo($('#exp').children("span"), 0.0001, {"font-weight":"700", color:'#333', "font-size":40}, 0.2))
 
 
-	var pinWorkEx = new ScrollScene({triggerElement: "#workExTrigger", duration: 3000, offset: 110})
+	var pinWorkEx = new ScrollScene({triggerElement: "#workExTrigger", duration: 2100, offset: 110})
 								.setPin("#workTitle",{pushFollowers: false})
 								.addTo(controller);
 
 
 	controller.addScene([pinWorkEx])
-	textAniW.addIndicators();
-	textAniE.addIndicators();
+	// textAniW.addIndicators();
+	// textAniE.addIndicators();
 	pinWorkEx.addIndicators();
 
 

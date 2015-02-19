@@ -9,7 +9,7 @@ body, html {
 
 
 #mainBackground{
-	/*background: url(../images/mainImage.jpg) no-repeat 50% 50% fixed;*/
+	background: url(../images/mainImage.jpg) no-repeat 50% 50% fixed;
 	background-size: cover;
 	height: 100%;
 	width: 100%;
@@ -53,17 +53,25 @@ body, html {
 
 
 
-#exp, #work{
+#exp, .workTitle{
 	float: left;
 	margin: 10px 0 0 10px;
 	font-family: 'Roboto', sans-serif !important;
 	font-weight: 700;
 }
-#work{
+
+.workTitle{
 	font-weight":700;
 	color:#2980b9; 
 	font-size:70px;
 }
+.smtxt{
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 700;
+	font-size: 45px;
+	color: #333;
+}
+
 .workExpRow .productImg{
 	float: left;
 }
